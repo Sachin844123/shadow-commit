@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -31,23 +32,43 @@
         <!-- Filter Section -->
         <section class="filter-section" style="margin-bottom: 2rem;">
             <div class="request-form-card">
+                <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">Filter Requests</h3>
                 <div class="form-group">
                     <label for="statusFilter">Filter by Status</label>
                     <select id="statusFilter" class="status-select">
-                        <option value="all">All Requests</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Accepted">Accepted</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
+                        <option value="all">All My Requests</option>
+                        <option value="Pending">New Requests (Available to Accept)</option>
+                        <option value="Accepted">My Accepted Requests</option>
+                        <option value="In Progress">My In Progress Requests</option>
+                        <option value="Completed">My Completed Requests</option>
                     </select>
                 </div>
             </div>
         </section>
 
-        <!-- Assigned Requests Section -->
+        <!-- Available & Assigned Requests Section -->
         <section class="requests-section">
-            <h2 class="section-title">Assigned Requests</h2>
-            <div class="requests-grid" id="requestsGrid">
+            <h2 class="section-title">Service Requests</h2>
+            
+            <!-- Map View Toggle -->
+            <div class="view-toggle">
+                <button class="toggle-btn active" id="listViewBtn">
+                    <i class="fas fa-list"></i> List View
+                </button>
+                <button class="toggle-btn" id="mapViewBtn">
+                    <i class="fas fa-map"></i> Map View
+                </button>
+            </div>
+            
+            <!-- List View -->
+            <div class="requests-grid" id="requestsGrid"></div>
+            
+            <!-- Map View -->
+            <div id="providerMapContainer" class="map-view-container" style="display: none;">
+                <div id="providerMap" class="provider-map"></div>
+                <div id="selectedRequestInfo" class="selected-request-info" style="display: none;"></div>
+            </div>
+        </section>
                 <div class="skeleton" style="height: 200px;"></div>
                 <div class="skeleton" style="height: 200px;"></div>
                 <div class="skeleton" style="height: 200px;"></div>
@@ -60,5 +81,11 @@
     <script type="module" src="scripts/firebase-config.js"></script>
     <script type="module" src="scripts/auth.js"></script>
     <script type="module" src="scripts/provider-dashboard.js"></script>
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet Geocoding Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 </body>
 </html>

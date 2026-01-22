@@ -7,85 +7,194 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
+                <div class="logo-icon">Q</div>
                 <h1>QuickFix Lite</h1>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn customer-btn" onclick="window.location.href='customer-dashboard.html'">Dashboard</button>
-                <button class="nav-btn provider-btn btn-logout" id="logoutBtn">Logout</button>
+                <button class="nav-btn customer-btn" onclick="window.location.href='customer-dashboard.html'">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </button>
+                <button class="nav-btn provider-btn btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
             </div>
         </div>
     </nav>
 
     <div class="dashboard-container">
+        <!-- Dashboard Header with Welcome Message -->
         <div class="dashboard-header">
-            <h1 class="dashboard-title">Customer Dashboard</h1>
-            <div id="userInfo" style="color: var(--text-secondary);"></div>
+            <div class="dashboard-welcome">
+                <h1 class="dashboard-title">
+                    <i class="fas fa-user-circle"></i>
+                    Customer Dashboard
+                </h1>
+                <div id="userInfo" class="user-welcome"></div>
+            </div>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="totalRequests">0</div>
+                        <div class="stat-label">Total Requests</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="pendingRequests">0</div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon completed">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="completedRequests">0</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Service Selection Section -->
-        <section class="services-section">
-            <h2 class="section-title">Select a Service</h2>
+        <!-- Quick Actions Section -->
+        <section class="quick-actions-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-bolt"></i>
+                    Quick Service Request
+                </h2>
+                <p class="section-subtitle">Select a service to get started</p>
+            </div>
             <div class="services-grid" id="servicesGrid">
                 <div class="service-card" data-service="Plumber">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
                     <h3>Plumber</h3>
+                    <p>Pipes, leaks, installations</p>
                 </div>
                 <div class="service-card" data-service="Electrician">
-                    <div class="service-icon">⚡</div>
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Electrician</h3>
+                    <p>Wiring, repairs, installations</p>
                 </div>
                 <div class="service-card" data-service="Carpenter">
-                    <div class="service-icon">🪚</div>
+                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
                     <h3>Carpenter</h3>
+                    <p>Furniture, repairs, custom work</p>
                 </div>
                 <div class="service-card" data-service="Cleaning">
-                    <div class="service-icon">🧹</div>
+                    <div class="service-icon"><i class="fas fa-broom"></i></div>
                     <h3>Cleaning</h3>
+                    <p>Deep cleaning, maintenance</p>
                 </div>
                 <div class="service-card" data-service="Others">
-                    <div class="service-icon">🛠️</div>
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
                     <h3>Others</h3>
+                    <p>General repairs, handyman</p>
                 </div>
             </div>
         </section>
 
-        <!-- Raise Service Request Form -->
+        <!-- Service Request Form -->
         <section class="request-form-section" id="requestFormSection" style="display: none;">
             <div class="request-form-card">
-                <h2>Raise Service Request</h2>
+                <div class="form-header">
+                    <h2>
+                        <i class="fas fa-plus-circle"></i>
+                        Create Service Request
+                    </h2>
+                    <button type="button" class="close-form-btn" id="closeFormBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
                 <form id="requestForm">
                     <div class="form-group">
-                        <label for="serviceType">Service Type</label>
+                        <label for="serviceType">
+                            <i class="fas fa-tag"></i>
+                            Service Type
+                        </label>
                         <input type="text" id="serviceType" name="serviceType" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="issueDescription">Issue Description</label>
-                        <textarea id="issueDescription" name="issueDescription" placeholder="Describe your issue in detail..." required></textarea>
+                        <label for="serviceLocation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Service Location
+                        </label>
+                        <div class="location-input-group">
+                            <input type="text" id="serviceLocation" name="serviceLocation" placeholder="Enter your address or click 'Use Current Location'" required>
+                            <button type="button" class="location-btn" id="getCurrentLocationBtn">
+                                <i class="fas fa-crosshairs"></i>
+                                Current Location
+                            </button>
+                        </div>
+                        <div id="customerMap" class="map-container" style="display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueDescription">
+                            <i class="fas fa-comment-alt"></i>
+                            Issue Description
+                        </label>
+                        <textarea id="issueDescription" name="issueDescription" placeholder="Please describe your issue in detail. The more information you provide, the better we can help you." required rows="4"></textarea>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="contactPhone">Contact Phone</label>
+                            <label for="contactPhone">
+                                <i class="fas fa-phone"></i>
+                                Contact Phone
+                            </label>
                             <input type="tel" id="contactPhone" name="contactPhone" placeholder="Your contact number" required>
                         </div>
                         <div class="form-group">
-                            <label for="contactEmail">Contact Email</label>
+                            <label for="contactEmail">
+                                <i class="fas fa-envelope"></i>
+                                Contact Email
+                            </label>
                             <input type="email" id="contactEmail" name="contactEmail" placeholder="Your email address" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary" id="submitRequestBtn">Submit Request</button>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelRequestBtn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn-primary" id="submitRequestBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Request
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
 
         <!-- My Requests Section -->
         <section class="requests-section">
-            <h2 class="section-title">My Requests</h2>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i>
+                    My Service Requests
+                </h2>
+                <div class="section-actions">
+                    <select id="statusFilter" class="status-filter">
+                        <option value="all">All Requests</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+            </div>
             <div class="requests-grid" id="requestsGrid">
                 <div class="skeleton" style="height: 200px;"></div>
                 <div class="skeleton" style="height: 200px;"></div>
@@ -99,5 +208,11 @@
     <script type="module" src="scripts/firebase-config.js"></script>
     <script type="module" src="scripts/auth.js"></script>
     <script type="module" src="scripts/customer-dashboard.js"></script>
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet Geocoding Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 </body>
 </html>

@@ -38,8 +38,11 @@ export function showToast(message, type = 'info') {
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
     
-    const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ';
-    toast.innerHTML = `<span style="font-size: 1.2rem;">${icon}</span><span>${message}</span>`;
+    const iconClass = type === 'success' ? 'fas fa-check-circle' : 
+                     type === 'error' ? 'fas fa-exclamation-circle' : 
+                     'fas fa-info-circle';
+    
+    toast.innerHTML = `<i class="${iconClass}" style="font-size: 1.2rem;"></i><span>${message}</span>`;
     
     toastContainer.appendChild(toast);
     
