@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickFix Lite – Fast, Simple & Reliable Local Services</title>
+    <title>Our Services - QuickFix Lite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
                 <h1>QuickFix Lite</h1>
             </div>
             <nav class="nav-links">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Service List</a>
+                <a href="services.html" class="nav-link active">Service List</a>
             </nav>
             <div class="nav-buttons">
                 <button class="nav-btn customer-btn" onclick="window.location.href='customer-login.html'">Customer</button>
@@ -29,102 +29,112 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <div class="hero-image-container">
-                        <div class="hero-image-circle">
-                            <div class="hero-image-placeholder">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&crop=center" alt="Service Professionals" class="hero-service-image">
-                            </div>
-                            <!-- Happy Clients Badge -->
-                            <div class="happy-clients-badge">
-                                <div class="badge-icon">😊</div>
-                                <div class="badge-content">
-                                    <strong>12,978</strong>
-                                    <span>Happy Clients</span>
-                                </div>
-                            </div>
-                            <!-- Service Rating Badge -->
-                            <div class="service-rating-badge">
-                                <div class="service-icon">🔧</div>
-                                <div class="service-info">
-                                    <span class="service-name">Cleaning Service</span>
-                                    <div class="service-stars">
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                        <span class="star">★</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Service List Section -->
+    <section class="services-section" style="padding-top: 6rem;">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions for all your service needs</p>
+            </div>
+            <div class="services-list-grid">
+                <div class="service-item-card">
+                    <div class="service-item-icon">🔧</div>
+                    <h3>Plumbing Services</h3>
+                    <p>Expert plumbers for repairs, installations, and maintenance. From leaky faucets to complete plumbing systems.</p>
+                    <ul class="service-features">
+                        <li>Leak repairs</li>
+                        <li>Pipe installation</li>
+                        <li>Drain cleaning</li>
+                        <li>Water heater services</li>
+                    </ul>
                 </div>
-                <div class="hero-right">
-                    <h1 class="hero-headline">
-                        One-stop Solution for your <span class="highlight-orange">Services</span>
-                    </h1>
-                    <p class="hero-subheadline">Order any service, anytime from anywhere</p>
-                    
-                    <!-- Search Bar -->
-                    <div class="hero-search">
-                        <button class="location-btn">
-                            <span>New York</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <input type="text" class="search-input" placeholder="What are you look for?">
-                        <button class="search-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.35-4.35"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <!-- Popular Services -->
-                    <div class="popular-services">
-                        <span class="popular-label">Popular:</span>
-                        <div class="service-tags">
-                            <button class="service-tag">Repair</button>
-                            <button class="service-tag">Electrician</button>
-                            <button class="service-tag">Cleaner</button>
-                            <button class="service-tag">Painting</button>
-                            <button class="service-tag">Saloon</button>
-                            <button class="service-tag">Home Move</button>
-                        </div>
-                    </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">⚡</div>
+                    <h3>Electrical Services</h3>
+                    <p>Licensed electricians for all your electrical needs. Safe, reliable, and professional service.</p>
+                    <ul class="service-features">
+                        <li>Wiring & rewiring</li>
+                        <li>Panel upgrades</li>
+                        <li>Lighting installation</li>
+                        <li>Electrical repairs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">🪚</div>
+                    <h3>Carpentry Services</h3>
+                    <p>Skilled carpenters for custom furniture, repairs, and installations. Quality craftsmanship guaranteed.</p>
+                    <ul class="service-features">
+                        <li>Custom furniture</li>
+                        <li>Cabinet installation</li>
+                        <li>Wood repairs</li>
+                        <li>Framing & trim work</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">🧹</div>
+                    <h3>Cleaning Services</h3>
+                    <p>Professional cleaning services for homes and offices. Deep cleaning, regular maintenance, and more.</p>
+                    <ul class="service-features">
+                        <li>Deep cleaning</li>
+                        <li>Regular maintenance</li>
+                        <li>Office cleaning</li>
+                        <li>Move-in/out cleaning</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">🎨</div>
+                    <h3>Painting Services</h3>
+                    <p>Expert painters for interior and exterior projects. Quality paints and professional finish.</p>
+                    <ul class="service-features">
+                        <li>Interior painting</li>
+                        <li>Exterior painting</li>
+                        <li>Wall preparation</li>
+                        <li>Color consultation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">💇</div>
+                    <h3>Salon Services</h3>
+                    <p>Professional salon services at your convenience. Haircuts, styling, and beauty treatments.</p>
+                    <ul class="service-features">
+                        <li>Haircuts & styling</li>
+                        <li>Hair coloring</li>
+                        <li>Beauty treatments</li>
+                        <li>Home salon services</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">🚚</div>
+                    <h3>Home Moving Services</h3>
+                    <p>Reliable moving services for your relocation needs. Safe, efficient, and affordable.</p>
+                    <ul class="service-features">
+                        <li>Packing & unpacking</li>
+                        <li>Loading & unloading</li>
+                        <li>Furniture assembly</li>
+                        <li>Storage solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item-card">
+                    <div class="service-item-icon">🛠️</div>
+                    <h3>General Repairs</h3>
+                    <p>Handyman services for all your repair needs. From small fixes to major renovations.</p>
+                    <ul class="service-features">
+                        <li>Home repairs</li>
+                        <li>Appliance installation</li>
+                        <li>Assembly services</li>
+                        <li>General maintenance</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-container">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Fast Response</h3>
-                <p>Get connected with service providers instantly</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>Trusted Professionals</h3>
-                <p>Verified and reliable service providers</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Easy to Use</h3>
-                <p>Simple interface for seamless experience</p>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Footer -->
     <footer class="footer">

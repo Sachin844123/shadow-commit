@@ -43,5 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    
     console.log('QuickFix Lite - Landing Page Loaded');
 });
