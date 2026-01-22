@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - QuickFix Lite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>QuickFix Lite</h1>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn customer-btn" onclick="window.location.href='customer-dashboard.html'">Dashboard</button>
+                <button class="nav-btn provider-btn btn-logout" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Customer Dashboard</h1>
+            <div id="userInfo" style="color: var(--text-secondary);"></div>
+        </div>
+
+        <!-- Service Selection Section -->
+        <section class="services-section">
+            <h2 class="section-title">Select a Service</h2>
+            <div class="services-grid" id="servicesGrid">
+                <div class="service-card" data-service="Plumber">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plumber</h3>
+                </div>
+                <div class="service-card" data-service="Electrician">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrician</h3>
+                </div>
+                <div class="service-card" data-service="Carpenter">
+                    <div class="service-icon">🪚</div>
+                    <h3>Carpenter</h3>
+                </div>
+                <div class="service-card" data-service="Cleaning">
+                    <div class="service-icon">🧹</div>
+                    <h3>Cleaning</h3>
+                </div>
+                <div class="service-card" data-service="Others">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Others</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Raise Service Request Form -->
+        <section class="request-form-section" id="requestFormSection" style="display: none;">
+            <div class="request-form-card">
+                <h2>Raise Service Request</h2>
+                <form id="requestForm">
+                    <div class="form-group">
+                        <label for="serviceType">Service Type</label>
+                        <input type="text" id="serviceType" name="serviceType" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueDescription">Issue Description</label>
+                        <textarea id="issueDescription" name="issueDescription" placeholder="Describe your issue in detail..." required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone">Contact Phone</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" placeholder="Your contact number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Contact Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" placeholder="Your email address" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary" id="submitRequestBtn">Submit Request</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- My Requests Section -->
+        <section class="requests-section">
+            <h2 class="section-title">My Requests</h2>
+            <div class="requests-grid" id="requestsGrid">
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="scripts/firebase-config.js"></script>
+    <script type="module" src="scripts/auth.js"></script>
+    <script type="module" src="scripts/customer-dashboard.js"></script>
+</body>
+</html>

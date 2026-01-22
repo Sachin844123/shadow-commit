@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix Lite – Fast, Simple & Reliable Local Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">Q</div>
+                <h1>QuickFix Lite</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Service List</a>
+            </nav>
+            <div class="nav-buttons">
+                <button class="nav-btn customer-btn" onclick="window.location.href='customer-login.html'">Customer</button>
+                <button class="nav-btn provider-btn" onclick="window.location.href='provider-login.html'">Service Provider</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-image-container">
+                        <div class="hero-image-circle">
+                            <div class="hero-image-placeholder">
+                                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="80" fill="#FF7A18" opacity="0.1"/>
+                                    <path d="M100 40L120 80L160 85L130 115L135 155L100 135L65 155L70 115L40 85L80 80L100 40Z" fill="#FF7A18"/>
+                                    <circle cx="100" cy="100" r="60" fill="white" opacity="0.9"/>
+                                    <path d="M80 100L95 115L120 85" stroke="#FF7A18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <!-- Happy Clients Badge -->
+                            <div class="happy-clients-badge">
+                                <div class="badge-icon">😊</div>
+                                <div class="badge-content">
+                                    <strong>12,978</strong>
+                                    <span>Happy Clients</span>
+                                </div>
+                            </div>
+                            <!-- Service Rating Badge -->
+                            <div class="service-rating-badge">
+                                <div class="service-icon">🔧</div>
+                                <div class="service-info">
+                                    <span class="service-name">Cleaning Service</span>
+                                    <div class="service-stars">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <h1 class="hero-headline">
+                        One-stop Solution for your <span class="highlight-orange">Services</span>
+                    </h1>
+                    <p class="hero-subheadline">Order any service, anytime from anywhere</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="hero-search">
+                        <button class="location-btn">
+                            <span>New York</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <input type="text" class="search-input" placeholder="What are you look for?">
+                        <button class="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Popular Services -->
+                    <div class="popular-services">
+                        <span class="popular-label">Popular:</span>
+                        <div class="service-tags">
+                            <button class="service-tag">Repair</button>
+                            <button class="service-tag">Electrician</button>
+                            <button class="service-tag">Cleaner</button>
+                            <button class="service-tag">Painting</button>
+                            <button class="service-tag">Saloon</button>
+                            <button class="service-tag">Home Move</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Response</h3>
+                <p>Get connected with service providers instantly</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Trusted Professionals</h3>
+                <p>Verified and reliable service providers</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Easy to Use</h3>
+                <p>Simple interface for seamless experience</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
